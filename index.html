@@ -13,6 +13,15 @@
     <button onclick="clearAllTasks()" type="clearAllTasks">Clear All Tasks</button>
 </form>
 
+<!-- Додавання форми для пошуку -->
+<div class="search-container">
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search Tasks">
+        <button type="submit">Search</button>
+        <button id="clearSearchButton" type="clearAllTasks">Clear Search</button>
+    </form>
+</div>
+
 <div class="task-container">
     <div class="task-column">
         <h2>Tasks To Do</h2>
@@ -30,6 +39,10 @@
     </div>
 </div>
 
+<canvas id="taskChart"></canvas>
+
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
+

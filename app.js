@@ -147,6 +147,48 @@ function clearAllTasks() {
     taskManager.clearTasks();
 }
 
+// Оголошення функції пошуку завдань за ключовими словами
+function searchTasks() {
+    const searchInput = document.getElementById('searchInput');
+    const keyword = searchInput.value.trim().toLowerCase();
+
+    const filteredTasks = taskManager.tasks.filter(task => {
+        const title = task.title.toLowerCase();
+        const description = task.description.toLowerCase();
+        return title.includes(keyword) || description.includes(keyword);
+    });
+
+    taskManager.clearTaskLists();
+    filteredTasks.forEach(task => {
+        taskManager.renderTask(task);
+    });
+
+    searchInput.value = '';
+}
+
+// Оголошення функції очищення результатів пошуку
+function clearSearchResults() {
+    taskManager.clearTaskLists();
+    taskManager.renderTasks();
+}
+
+// Додавання події для пошуку завдань при натисканні кнопки "Search"
+document.getElementById('searchForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    searchTasks();
+});
+
+// Додавання події для очищення результатів пошуку при натисканні кнопки "Clear Search"
+document.getElementById('clearSearchButton').addEventListener('click', clearSearchResults);
+
+
 document.getElementById('taskForm').addEventListener('submit', addTask);
 
 taskManager.loadTasks();
+
+
+
+
+
+
+

@@ -152,3 +152,10 @@ li button:nth-child(3) {
 .task-list li .status {
     font-weight: bold;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
