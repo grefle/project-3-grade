@@ -67,7 +67,13 @@ class TaskManager {
     loadTasks() {
         const savedTasks = localStorage.getItem('tasks');
         if (savedTasks) {
-            this.tasks = JSON.parse(savedTasks);
+            const tasksData = JSON.parse(savedTasks);
+            this.tasks = tasksData.map(taskData => {
+                const task = new Task(taskData.title, taskData.description);
+                task.id = taskData.id;
+                task.status = taskData.status;
+                return task;
+            });
             this.renderTasks();
         }
     }
