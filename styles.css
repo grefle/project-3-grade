@@ -1,0 +1,154 @@
+/* Стилі для елементів інтерфейсу */
+
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333333;
+}
+
+h1 {
+    color: #333333;
+}
+
+h2 {
+    color: #666666;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="text"],
+button[type="clearAllTasks"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="text"] {
+    width: 200px;
+}
+
+button[type="submit"] {
+    background-color: #f0ad4e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button[type="clearAllTasks"] {
+    background-color: #cd7400;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+li span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+li .status {
+    color: #666666;
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+li .status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 10px;
+}
+
+li .status-circle.todo {
+    background-color: yellow;
+}
+
+li .status-circle.inprogress {
+    background-color: #FDD835;
+}
+
+li .status-circle.done {
+    background-color: #4CAF50;
+}
+
+li .status-circle.deleted {
+    background-color: #F44336;
+}
+
+li button {
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+li button:nth-child(1) {
+    background-color: #5cb85c;
+    color: #ffffff;
+}
+
+li button:nth-child(2) {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+
+li button:nth-child(3) {
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+.task-container {
+    display: flex;
+}
+
+.task-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.task-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.task-list li {
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task-list li span {
+    display: block;
+}
+
+.task-list li .status {
+    font-weight: bold;
+}
