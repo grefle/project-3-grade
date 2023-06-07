@@ -105,9 +105,9 @@ class TaskManager {
       <span>${task.title}</span>
       <span>${task.description}</span>
       <span class="status">${task.status}</span>
-      <button onclick="updateTaskStatus('${task.id}', 'done')">Done</button>
-      <button onclick="updateTaskStatus('${task.id}', 'inprogress')">In Progress</button>
       <button onclick="updateTaskStatus('${task.id}', 'todo')">To Do</button>
+      <button onclick="updateTaskStatus('${task.id}', 'inprogress')">In Progress</button>
+      <button onclick="updateTaskStatus('${task.id}', 'done')">Done</button>
       <button onclick="deleteTask('${task.id}')">Delete</button>
     `;
         taskList.appendChild(li);
@@ -184,10 +184,3 @@ document.getElementById('clearSearchButton').addEventListener('click', clearSear
 document.getElementById('taskForm').addEventListener('submit', addTask);
 
 taskManager.loadTasks();
-
-
-
-
-
-
-
