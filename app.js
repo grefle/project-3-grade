@@ -181,7 +181,6 @@ document.getElementById('searchForm').addEventListener('submit', function (event
 // Додавання події для очищення результатів пошуку при натисканні кнопки "Clear Search"
 document.getElementById('clearSearchButton').addEventListener('click', clearSearchResults);
 
-
 document.getElementById('taskForm').addEventListener('submit', addTask);
 
 taskManager.loadTasks();
