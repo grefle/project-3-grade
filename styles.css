@@ -75,31 +75,6 @@ li .status {
     font-weight: bold;
 }
 
-li .status-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    left: -15px;
-    top: 10px;
-}
-
-li .status-circle.todo {
-    background-color: yellow;
-}
-
-li .status-circle.inprogress {
-    background-color: #FDD835;
-}
-
-li .status-circle.done {
-    background-color: #4CAF50;
-}
-
-li .status-circle.deleted {
-    background-color: #F44336;
-}
-
 li button {
     padding: 5px 10px;
     font-size: 12px;
@@ -158,3 +133,39 @@ li button:nth-child(3) {
     justify-content: center;
     margin-top: 20px;
 }
+
+/* ... */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-content button {
+    margin-top: 10px;
+}
+
+/* ... */
+
+

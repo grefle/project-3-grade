@@ -39,7 +39,18 @@
     </div>
 </div>
 
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Task</h3>
+        <input type="text" id="editTitle" placeholder="Title" required>
+        <textarea id="editDescription" placeholder="Description" required></textarea>
+        <button onclick="saveChanges()">Save Changes</button>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
 <script src="app.js"></script>
+<script src="modal.js"></script> <!-- Доданий файл для модального вікна -->
 
 </body>
 </html>

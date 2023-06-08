@@ -9,6 +9,14 @@ class Task {
     setStatus(status) {
         this.status = status;
     }
+
+    setTitle(title) {
+        this.title = title;
+    }
+
+    setDescription(description) {
+        this.description = description;
+    }
 }
 
 class TaskManager {
@@ -31,6 +39,16 @@ class TaskManager {
         const task = this.tasks.find((task) => task.id === taskId);
         if (task) {
             task.setStatus(status);
+            this.updateTaskUI(task);
+            this.saveTasks();
+        }
+    }
+
+    updateTask(taskId, title, description) {
+        const task = this.tasks.find((task) => task.id === taskId);
+        if (task) {
+            task.setTitle(title);
+            task.setDescription(description);
             this.updateTaskUI(task);
             this.saveTasks();
         }
@@ -92,6 +110,7 @@ class TaskManager {
     }
 
     renderTasks() {
+        this.clearTaskLists(); // Очищення списків завдань перед додаванням нових завдань
         this.tasks.forEach((task) => {
             this.renderTask(task);
         });
@@ -103,18 +122,21 @@ class TaskManager {
         li.id = task.id;
         li.innerHTML = `
       <span>${task.title}</span>
-      <span>${task.description}</span>
+      <span>Опис: ${task.description}</span>
       <span class="status">${task.status}</span>
+      <button onclick="editTask('${task.id}')">Edit</button> <!-- Додано кнопку Edit -->
       <button onclick="updateTaskStatus('${task.id}', 'todo')">To Do</button>
       <button onclick="updateTaskStatus('${task.id}', 'inprogress')">In Progress</button>
       <button onclick="updateTaskStatus('${task.id}', 'done')">Done</button>
       <button onclick="deleteTask('${task.id}')">Delete</button>
     `;
         taskList.appendChild(li);
+        this.saveTasks();
     }
 }
 
 const taskManager = new TaskManager();
+
 
 function addTask(event) {
     event.preventDefault();
@@ -133,6 +155,34 @@ function addTask(event) {
 
 function updateTaskStatus(taskId, status) {
     taskManager.updateTaskStatus(taskId, status);
+}
+
+function editTask(taskId) {
+    const task = taskManager.tasks.find((task) => task.id === taskId);
+    if (task) {
+        document.getElementById('editTitle').value = task.title;
+        document.getElementById('editDescription').value = task.description;
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('modal').dataset.taskId = taskId;
+    }
+}
+
+function saveChanges() {
+    const taskId = document.getElementById('modal').dataset.taskId;
+    const title = document.getElementById('editTitle').value.trim();
+    const description = document.getElementById('editDescription').value.trim();
+    if (taskId && title !== '' && description !== '') {
+        taskManager.updateTask(taskId, title, description);
+        closeModal();
+        taskManager.renderTasks(); // Оновлення відображення завдань
+    }
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('modal').dataset.taskId = '';
+    document.getElementById('editTitle').value = '';
+    document.getElementById('editDescription').value = '';
 }
 
 function deleteTask(taskId) {
