@@ -33,3 +33,4 @@ class Modal {
 }
 
 const modal = new Modal();
+

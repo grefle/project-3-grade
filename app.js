@@ -234,3 +234,4 @@ document.getElementById('clearSearchButton').addEventListener('click', clearSear
 document.getElementById('taskForm').addEventListener('submit', addTask);
 
 taskManager.loadTasks();
+

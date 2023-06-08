@@ -134,8 +134,6 @@ li button:nth-child(3) {
     margin-top: 20px;
 }
 
-/* ... */
-
 .modal {
     display: none;
     position: fixed;
@@ -165,7 +163,3 @@ li button:nth-child(3) {
 .modal-content button {
     margin-top: 10px;
 }
-
-/* ... */
-
-
