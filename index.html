@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Task Manager</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-<h1>Task Manager</h1>
-<form id="taskForm">
-    <input type="text" id="title" placeholder="Title" required>
-    <input type="text" id="description" placeholder="Description" required>
-    <button type="submit">Add Task</button>
-    <button onclick="clearAllTasks()" type="clearAllTasks">Clear All Tasks</button>
-</form>
-
-<!-- Додавання форми для пошуку -->
-<div class="search-container">
-    <form id="searchForm">
-        <input type="text" id="searchInput" placeholder="Search Tasks">
-        <button type="submit">Search</button>
-        <button id="clearSearchButton" type="clearAllTasks">Clear Search</button>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1>Task Manager</h1>
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="description" placeholder="Description" required />
+      <button type="submit">Add Task</button>
+      <button onclick="clearAllTasks()" type="clearAllTasks">
+        Clear All Tasks
+      </button>
     </form>
-</div>
 
-<div class="task-container">
-    <div class="task-column">
-        <h2>Tasks To Do</h2>
+    <!-- Додавання форми для пошуку -->
+    <div class="search-container">
+      <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search Tasks" />
+        <button type="submit">Search</button>
+        <button id="clearSearchButton" type="clearAllTasks">
+          Clear Search
+        </button>
+      </form>
+    </div>
+
+    <div class="task-container">
+      <div class="task-column">
+        <div class="column-header">
+          <h2>Tasks To Do</h2>
+          <img src="images/todo-icon.svg" alt="Todo" class="column-icon" />
+        </div>
         <ul id="todoList" class="task-list"></ul>
-    </div>
+      </div>
 
-    <div class="task-column">
-        <h2>Tasks In Progress</h2>
+      <div class="task-column">
+        <div class="column-header">
+          <h2>Tasks In Progress</h2>
+          <img src="images/inprogress-icon.svg" alt="In Progress" class="column-icon" />
+        </div>
         <ul id="inprogressList" class="task-list"></ul>
-    </div>
+      </div>
 
-    <div class="task-column">
-        <h2>Completed Tasks</h2>
+      <div class="task-column">
+        <div class="column-header">
+          <h2>Completed Tasks</h2>
+          <img src="images/done-icon.svg" alt="Done" class="column-icon" />
+        </div>
         <ul id="doneList" class="task-list"></ul>
+      </div>
     </div>
-</div>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
+    <div id="modal" class="modal">
+      <div class="modal-content">
         <h3>Edit Task</h3>
-        <input type="text" id="editTitle" placeholder="Title" required>
-        <textarea id="editDescription" placeholder="Description" required></textarea>
+        <input type="text" id="editTitle" placeholder="Title" required />
+        <textarea
+          id="editDescription"
+          placeholder="Description"
+          required
+        ></textarea>
         <button onclick="saveChanges()">Save Changes</button>
         <button onclick="closeModal()">Close</button>
+      </div>
     </div>
-</div>
 
-<script src="app.js"></script>
-<script src="modal.js"></script> <!-- Доданий файл для модального вікна -->
-
-</body>
+    <script src="app.js"></script>
+    <script src="modal.js"></script><!-- Доданий файл для модального вікна -->
+    <script src="server.js"></script>
+  </body>
 </html>
-
