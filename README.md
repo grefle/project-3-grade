@@ -47,5 +47,5 @@
 
 ## Ліцензія
 
-Цей проєкт ліцензовано під [MIT License](https://opensource.org/licenses/MIT).
+Цей проєкт ліцензовано під [GPL-3.0 license](https://opensource.org/license/gpl-3-0/).
 
