@@ -241,3 +241,4 @@ document
 document.getElementById('taskForm').addEventListener('submit', addTask);
 
 taskManager.loadTasks();
+

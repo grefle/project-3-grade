@@ -99,70 +99,10 @@ li button:nth-child(3) {
   color: #ffffff;
 }
 
-.task-container {
-  display: flex;
-}
-
-.task-list {
-  margin: 20px 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.task-list li {
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.task-list li span {
-  display: block;
-}
-
-.task-list li .status {
-  font-weight: bold;
-}
-
 .search-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px;
-}
-
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.modal-content button {
-  margin-top: 10px;
-}
-
-.task-container {
-  display: flex;
-  justify-content: space-around;
-  width: 1900px;
 }
 
 .column-header {
@@ -173,8 +113,4 @@ li button:nth-child(3) {
 .column-icon {
   width: 70px;
   height: 70px;
-}
-
-.task-column {
-  width: 500px;
 }

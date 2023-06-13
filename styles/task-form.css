@@ -1,0 +1,15 @@
+/* Стилі для форми завдання */
+
+.task-container {
+    display: flex;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-around;
+    width: 1900px;
+}
+
+.task-column {
+    width: 500px;
+}
